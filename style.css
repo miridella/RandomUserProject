@@ -1,0 +1,36 @@
+:root {
+    --primary: #C49E70;
+    --primary-dark: #A57F52;
+
+    --accent: #3A6EA5;
+
+    --bg: #F8F1E8;
+    --card-bg: #FFFFFF;
+
+    --text: #3B2F2F;
+    --text-muted: #7A6A57;
+
+    --border: #E7D8C9;
+}
+
+#navbar{
+    background-color: var(--primary);
+    
+}
+
+.nav-item a, h1{
+    color: var(--text);
+}
+
+#btnSearch{
+    background-color: var(--border); 
+    font-weight: 500;
+    color: var(--text);
+}
+
+#btnSearch:hover{
+    background-color: var(--primary-dark); 
+    color: var(--border);
+    font-weight: 500;
+    border-color: var(--border)
+}
