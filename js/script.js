@@ -124,7 +124,7 @@ function generaCard(user){
 
     // cuore preferiti
     let fav = document.createElement("img");
-    fav.src = "./img/saved.png";
+    fav.src = "./img/salvato.png";
     fav.classList.add("fav-icon");
     body.append(fav);
 

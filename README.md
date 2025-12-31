@@ -4,9 +4,9 @@ Questo progetto permette di generare utenti in modo casuale, utilizzando l’API
 
 Contiene le seguenti funzionalità: 
 ### 1.  Selezione filtri 
-    Possibilità di scegliere la nazionalità, il genere e/o il numero di utenti che verranno generati.
+Possibilità di scegliere la nazionalità, il genere e/o il numero di utenti che verranno generati.
 ### 2.  Lista dei preferiti
-    Inserire utenti in una lista dei preferiti, che rimane salvata anche dopo il ricaricamento della pagina.
+Inserire utenti in una lista dei preferiti, che rimane salvata anche dopo il ricaricamento della pagina.
 ### 3. Ricerca utenti
     E' possibile cercare un utente tramite la barra di ricerca, inserendo uno specifico nome. 
 ### 4.  Dettagli utente 
