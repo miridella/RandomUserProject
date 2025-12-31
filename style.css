@@ -39,6 +39,20 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+#BtnGenera, #btnCerca{
+  background-color: var(--primary);
+  border: var(--text) 1px solid;
+}
+
+#BtnGenera:hover,  #btnCerca:hover{
+  background-color: var(--primary-dark);
+  color: var(--border);
+}
+
+.form-check-input:hover{
+  cursor:pointer;
+}
+
 .main-card {
   background-color: #fffaf3;
   border-radius: 20px;
@@ -82,7 +96,7 @@ select {
   gap: 20px;
 }
 
-/* CARD UTENTE */
+
 .user-card {
   background-color: #fffaf3;
   border-radius: 18px;
@@ -97,14 +111,12 @@ select {
   box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
-/* immagine */
 .user-img {
   width: 70%;
   height: 250px;
   object-fit: cover;
 }
 
-/* cuore preferiti */
 .fav-icon {
   width: 38px;
   cursor: pointer;
@@ -119,7 +131,7 @@ select {
   animation: pop 0.4s ease;
 }
 
-/* animazioni */
+
 @keyframes fadeUp {
   from {
     opacity: 0;

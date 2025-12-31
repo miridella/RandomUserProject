@@ -31,11 +31,6 @@
                     <a class="nav-link" href="./preferiti.html">Preferiti</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <button id="btnSearch" class="btn"  type="submit">Search</button>
-                
-            </form>
             </div>
         </div>
     </nav>
@@ -101,7 +96,7 @@
 
             
             <div class="col-md-4 mb-3">
-            <label for="range" class="form-label">Età</label>
+            <label class="label-title mb-2">Numero di utenti generati</label>
             <div class="d-flex">
                 <output for="range" id="rangeValue" aria-hidden="true" ></output>
                 <input type="range" class="form-range ms-5" min="0" max="20" id="range">
@@ -112,8 +107,8 @@
 
         
         <div class="text-center mb-4">
-            <button id="generateBtn" class="btn btn-beige px-4 py-2">
-            Genera utente
+            <button id="BtnGenera" class="btn btn-beige px-4 py-2">
+                Genera utente
             </button>
         </div>
         </div>
@@ -123,7 +118,8 @@
     <div class="d-flex align-items-center justify-content-center mt-5 d-none" id="search">
         <div class="d-flex">
                 <input id="txtCerca" class="form-control me-2" type="text" placeholder="Search" aria-label="Search"/>
-                <button id="btnCerca" class="btn">Search</button>
+                <button id="btnCerca" class="btn">Cerca</button>
+                <button id="btnPulisci" class="btn">Pulisci ricerca</button>
         </div>
     </div>
 

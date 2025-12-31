@@ -17,7 +17,7 @@ if(window.location.pathname.endsWith("/index.html"))
         rangeOutput.textContent = this.value;
     });
     
-    generateBtn.addEventListener("click", function(){
+    BtnGenera.addEventListener("click", function(){
         userCard.innerHTML="";
         url="/api";
         //chiamata
