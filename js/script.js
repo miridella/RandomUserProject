@@ -59,14 +59,27 @@ if(window.location.pathname.endsWith("/index.html"))
     })
 
     btnCerca.addEventListener("click", function(){
-       
-        console.log(txtCerca.value)
-        for(let i=0;i<data.length;i++)
-        {
-            if(data[i].includes(txtCerca.value))
+       userCard.innerHTML="";
+
+       for(let i=0;i<data.length;i++)
+       {
+            let nomeCompleto= data[i].name.first + data[i].name.last;      
+            nomeCompleto=nomeCompleto.toLowerCase();
+
+            if(nomeCompleto.includes(txtCerca.value.toLowerCase()))
             {
                 generaCard(data[i]);
             }
+
+        }
+        txtCerca.value="";
+    })
+
+    btnPulisci.addEventListener("click", function(){
+        userCard.innerHTML="";
+        for(let i=0;i<data.length;i++)
+        {
+            generaCard(data[i]);
         }
     })
 }
@@ -78,6 +91,9 @@ function generaCard(user){
     let card = document.createElement("div");
     card.classList.add("user-card");
     col.append(card);
+    card.addEventListener("click", function(){
+        modale(user);
+    })
 
     // immagine
     let img = document.createElement("img");
@@ -112,20 +128,41 @@ function generaCard(user){
     fav.classList.add("fav-icon");
     body.append(fav);
 
-    fav.addEventListener("click", () => {
-        if(favorites.some(persona => persona.login.uuid == user.login.uuid))
-        {
-            preferiti.push(user)
-            localStorage.setItem("favorites", preferiti);
+    fav.addEventListener("click", function(e) {
+        e.stopPropagation();
+        const id = user.login.uuid;
+        let preferiti = JSON.parse(localStorage.getItem("favorites")) || [];
+
+        if (preferiti.some(p => p.login.uuid === id)) {
+            preferiti = preferiti.filter(p => p.login.uuid !== id);
+            fav.classList.remove("saved");
+            location.reload();
+        } else {
+            preferiti.push(user);
+            fav.classList.add("saved");
         }
-        else{
-            favorites = favorites.filter(user => user.login.uuid !== id);
-             localStorage.setItem("favorites", preferiti);
-        }
-        
-        fav.classList.add("saved");
+
+        localStorage.setItem("favorites", JSON.stringify(preferiti));
     });
 
     userCard.append(col);
 
+}
+
+function modale(user){
+    console.log("ciao");
+    const modalElement = document.getElementById("userModal");
+    const userModal = new bootstrap.Modal(modalElement);
+
+    modalName.textContent = `${user.name.first} ${user.name.last}`;
+    modalImg.src = user.picture.large;
+    modalEmail.textContent = user.email;
+    modalPhone.textContent = user.phone;
+    modalCountry.textContent = user.location.country;
+    modalAge.textContent = user.dob.age;
+    modalAddress.textContent= user.location.city + ", "+ user.location.street.name + " " +user.location.street.number 
+    modalUsername.textContent=user.login.username;
+    modalGender.textContent=user.gender;
+
+    userModal.show();
 }

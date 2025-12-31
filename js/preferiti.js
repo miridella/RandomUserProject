@@ -4,10 +4,17 @@ caricaPreferiti();
 
 function caricaPreferiti(){
     let preferiti = JSON.parse(localStorage.getItem("favorites")) || [];
-    console.log(preferiti);
 
-    for(let i=0;i<preferiti.length;i++)
+    if(preferiti.length>0)
     {
-        generaCard(preferiti[i]);
+        for(let i=0;i<preferiti.length;i++)
+        {
+            generaCard(preferiti[i]);
+        }
+    }
+    else{
+        etichetta.textContent="Nessun preferito."
+        etichetta.style.fontSize="20px";
+        userCard.classList.add("d-none");
     }
 }
